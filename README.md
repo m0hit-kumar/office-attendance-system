@@ -40,11 +40,10 @@ import os
 
 ## 📸 Screenshots:-
 
-<img src="https://github.com/m0hit-kumar/Programming-Basics/blob/main/Python/Projects/Office%20Attendance%20System/images/1.png"></img>
-<img src="https://github.com/m0hit-kumar/Programming-Basics/blob/main/Python/Projects/Office%20Attendance%20System/images/5.png"></img>
-<img src="https://github.com/m0hit-kumar/Programming-Basics/blob/main/Python/Projects/Office%20Attendance%20System/images/3.png"></img>
-<img src="https://github.com/m0hit-kumar/Programming-Basics/blob/main/Python/Projects/Office%20Attendance%20System/images/4.png"></img>
-<img src="https://github.com/m0hit-kumar/Programming-Basics/blob/main/Python/Projects/Office%20Attendance%20System/images/2.png"></img>
-
+<img src="https://github.com/m0hit-kumar/office-attendance-system/blob/main/Images/1.png"></img>
+<img src="https://github.com/m0hit-kumar/office-attendance-system/blob/main/Images/5.png"></img>
+<img src="https://github.com/m0hit-kumar/office-attendance-system/blob/main/Images/3.png"></img>
+<img src="https://github.com/m0hit-kumar/office-attendance-system/blob/main/Images/4.png"></img>
+<img src="https://github.com/m0hit-kumar/office-attendance-system/blob/main/Images/2.png"></img>
 
 

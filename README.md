@@ -40,10 +40,10 @@ import os
 
 ## 📸 Screenshots:-
 
-<img src="https://github.com/m0hit-kumar/office-attendance-system/blob/main/Images/1.png"></img>
-<img src="https://github.com/m0hit-kumar/office-attendance-system/blob/main/Images/5.png"></img>
-<img src="https://github.com/m0hit-kumar/office-attendance-system/blob/main/Images/3.png"></img>
-<img src="https://github.com/m0hit-kumar/office-attendance-system/blob/main/Images/4.png"></img>
-<img src="https://github.com/m0hit-kumar/office-attendance-system/blob/main/Images/2.png"></img>
+<img src="https://github.com/m0hit-kumar/office-attendance-system/blob/main/images/1.png"></img>
+<img src="https://github.com/m0hit-kumar/office-attendance-system/blob/main/images/5.png"></img>
+<img src="https://github.com/m0hit-kumar/office-attendance-system/blob/main/images/3.png"></img>
+<img src="https://github.com/m0hit-kumar/office-attendance-system/blob/main/images/4.png"></img>
+<img src="https://github.com/m0hit-kumar/office-attendance-system/blob/main/images/2.png"></img>
 
 

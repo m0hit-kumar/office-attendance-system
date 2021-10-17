@@ -48,6 +48,3 @@ import os
 
 
 
-
-# Contributor
-Mohit kumar(https://github.com/m0hit-kumar)

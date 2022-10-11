@@ -6,6 +6,7 @@ import tkinter as tk
 from functools import partial 
 #import tkMessageBox
 import os
+from turtle import bgcolor
 ##
 ##
 def data_update(userid):
@@ -50,7 +51,7 @@ def data_update(userid):
     
 
 
-def userInfo():
+def userInfo(bgColor,fgColor):
     def call_result(n1):  
         num1 = (n1.get())
         myfile = open("data.txt","r")
@@ -90,9 +91,9 @@ def userInfo():
     numberr =tk.StringVar(profile)
     profile.geometry('720x450')
     profile.title("View Logs")
-    profile.configure(bg ='black')
-    tk.Label(master=profile,text="User  Profile",font="none 20 bold",fg='white',bg="black").grid(row=1,column =2)
-    tk.Label(master=profile,text="UserId",width=10,bg="black",fg="red").grid(row=2,column=2)
+    profile.configure(bg =bgColor)
+    tk.Label(master=profile,text="User  Profile",font="none 20 bold",fg=fgColor,bg=bgColor).grid(row=1,column =2)
+    tk.Label(master=profile,text="UserId",width=10,bg=bgColor,fg="red").grid(row=2,column=2)
     username =tk.Entry(master=profile,textvariable=numberr,bg="red").grid(column=3,row=2)
       
 
@@ -102,8 +103,8 @@ def userInfo():
     buttonCal = tk.Button(master=profile, text="Enter", command=call_result11).grid(row=2, column=4,padx=6)  
     
 
-def exitWindow():
-    notice=tk.Tk("Admin Portaal")
+def exitWindow(bgColor,fgColor):
+    notice=tk.Tk("Admin Portal")
     
     def destroy_all():
         notice.destroy()
@@ -111,12 +112,13 @@ def exitWindow():
 
    
     notice.title("exit")
-    tk.Label(notice,text="do you really want to exit?").grid()
+    notice.config(bg=bgColor)
+    tk.Label(notice,text="do you really want to exit?",bg=bgColor,fg=fgColor).grid()
     tk.Button(notice,text="Yes",command=destroy_all).grid(column=1,row=6)
     tk.Button(notice,text="NO",command=notice.destroy).grid(row=6,column=2)
                                                             
     
-def create_profile():
+def create_profile(bgColor,fgColor):
    
         
         
@@ -142,18 +144,18 @@ def create_profile():
     age =tk.StringVar(create_profile)
     address =tk.StringVar(create_profile)
     create_profile.geometry('720x600')
-    create_profile.configure(bg ='black')
+    create_profile.configure(bg =bgColor)
 
     #username
-    tk.Label(master=create_profile,text="Create Profile",font="none 20 bold",justify=LEFT,fg='white',bg="black").grid()
+    tk.Label(master=create_profile,text="Create Profile",font="none 20 bold",justify=LEFT,fg=fgColor,bg=bgColor).grid()
     
-    tk.Label(master=create_profile,text="Name",width=10,height=2,font="none 10",bg="black",fg="red").grid(row=1,pady=2)
+    tk.Label(master=create_profile,text="Name",width=10,height=2,font="none 10",bg=bgColor,fg="red").grid(row=1,pady=2)
     tk.Entry(master=create_profile,textvariable=name,font="none 8",bg="red").grid(column=1,row=1)
     #age
-    tk.Label(master=create_profile,text="Age",font="none 10",width=10,height=2,bg="black",fg="red").grid(row=2,pady=2)
+    tk.Label(master=create_profile,text="Age",font="none 10",width=10,height=2,bg=bgColor,fg="red").grid(row=2,pady=2)
     tk.Entry(master=create_profile,textvariable=age,bg="red",font="none 8").grid(column=1,row=2)
     #address
-    tk.Label(master=create_profile,text="Address",width=10,height=2,bg="black",fg="red",font="none 10").grid(row=4,pady=2)
+    tk.Label(master=create_profile,text="Address",width=10,height=2,bg=bgColor,fg="red",font="none 10").grid(row=4,pady=2)
     tk.Entry(master=create_profile,textvariable=address,bg="red",font="none 8").grid(column=1,row=4)
     
 
@@ -162,7 +164,7 @@ def create_profile():
 
 
     instructions='Instruction to create a profile:- \n \n 1)Fill your name,age,postion and address.(All fields are required)\n 2)Then click generate id  \n 3) this will create your profile \n 4)To create another profile just fill the new details and click generate unique id.'
-    tk.Label(master=create_profile,text=instructions,bg="black",fg="white",font="none 8",justify=LEFT).grid(row=8,pady=20)
+    tk.Label(master=create_profile,text=instructions,bg=bgColor,fg=fgColor,font="none 8",justify=LEFT).grid(row=8,pady=20)
 
     buttonCal = tk.Button(master=create_profile, text="Generate unique id", command=call_result11).grid(row=5, column=3)  
     buttonCal = tk.Button(master=create_profile,text="Home",command=create_profile.destroy).grid(row=9, pady=2,column=0) 
@@ -172,9 +174,34 @@ def create_profile():
 window =tk.Tk()
 window.configure(bg ='black')
 window.title("mainScreen")
-heading=tk.Label(master=window,text="Welcome to the Admin Panel !!",font="none 20 bold",fg='white',bg="black").grid()
+button_mode = False
+def customize():
+    global button_mode
+    if button_mode:
+        toggle.configure(image=off,bg="black")
+        heading.config(fg="white",bg="black")
+        CreateProfile.config(command=lambda:create_profile("black","white"))
+        window.config(bg="black")
+        MarkAttendence.config(command=lambda : attend("black","white"))
+        ViewLogs.config(command=lambda: userInfo("black","white"))
+        Exit.config(command=lambda:exitWindow("black","white"))
+        button_mode = False
+    else:
+        toggle.config(image=on,bg="white")
+        heading.config(bg="white",fg="black")
+        window.configure(bg="white")
+        CreateProfile.config(command=lambda:create_profile("white","black"))
+        MarkAttendence.config(command=lambda : attend("white","black"))
+        ViewLogs.config(command=lambda: userInfo("white","black"))
+        Exit.config(command=lambda:exitWindow("white","black"))
+        button_mode = True
 
-def attend():
+on = PhotoImage(file="images/light.png")
+off = PhotoImage(file="images/dark.png")
+heading=tk.Label(master=window,text="Welcome to the Admin Panel !!",font="none 20 bold",fg='white',bg="black")
+heading.grid()
+
+def attend(bgColor,fgColor):
     def attendance_update():
         att=ID.get()
         myfile = open("data.txt","r")
@@ -183,7 +210,7 @@ def attend():
         myfile.close()
         if att not in user1.keys():
             tk.Label(master=popup,text='Invalid ID. Try Again!').grid()
-            print('$$$$$',num1)
+            # print('$$$$$',num1)
         else:
             user1[att]['attendance']=user1[att]['attendance']+1
             if user1[att]['attendance']==0:
@@ -205,20 +232,25 @@ def attend():
             myfile.close()
         
     popup=tk.Tk()
-    popup.configure(bg="black")
+    popup.configure(bg=bgColor)
     popup.title("Mark Attendance")
     ID =tk.StringVar(popup)
-    tk.Label(master=popup,text="enter user id",font="none 10 bold",fg="white",bg="black").grid(row=2,padx=3,pady=3)
+    tk.Label(master=popup,text="enter user id",font="none 10 bold",fg=fgColor,bg=bgColor).grid(row=2,padx=3,pady=3)
     tk.Entry(master=popup,textvariable=ID,bg="red").grid(row=2,column=1)
     Button=tk.Button(popup,text="Mark",command=attendance_update).grid(row=3,column=1,padx=3,pady=3)
     Button=tk.Button(popup,text="Exit",command=popup.destroy).grid(row=3,column=2,padx=3,pady=3)
 
     
-
-tk.Button(master=window,text="Create Profile",font="none 10 ",command=create_profile,width=20,height=4).grid(row=6,pady=15)
-tk.Button(master=window,text="View Logs",font="none 10 ",width=20,height=4,command=userInfo).grid(row=8,pady=15)
-tk.Button(master=window,text="Mark attendence",font="none 10 ",width=20,height=4,command=attend).grid(row=2,pady=15)
-top = tk.Button(master=window,text="QUIT",fg="red",font="none 10 ",command=exitWindow,width=20,height=4).grid(row=10,pady=15)
+toggle = tk.Button(master=window,image=off,bd=0,bg="black",command=customize)
+toggle.grid(row = 12,pady=15)
+CreateProfile = tk.Button(master=window,text="Create Profile",font="none 10 ",command=lambda:create_profile("black","white"),width=20,height=4)
+CreateProfile.grid(row=6,pady=15)
+ViewLogs = tk.Button(master=window,text="View Logs",font="none 10 ",width=20,height=4,command=lambda: userInfo("black","white"))
+ViewLogs.grid(row=8,pady=15)
+MarkAttendence = tk.Button(master=window,text="Mark attendence",font="none 10 ",width=20,height=4,command= lambda: attend("black","white"))
+MarkAttendence.grid(row=2,pady=15)
+Exit = tk.Button(master=window,text="QUIT",fg="red",font="none 10 ",command=lambda: exitWindow("black","white"),width=20,height=4)
+Exit.grid(row=10,pady=15)
 
 user1={}
 def file_logs(name_in,age_in,address_in,unique_gen):

@@ -38,12 +38,10 @@ import os
 ```
 
 
-## 📸 Screenshots:-
+## 📸 Demo:-
+  
+  https://user-images.githubusercontent.com/60257288/195001671-652f2cd3-5d61-4d03-be48-d4ed4c995a03.mp4 
+ 
 
-<img src="https://github.com/m0hit-kumar/office-attendance-system/blob/main/images/1.png"></img>
-<img src="https://github.com/m0hit-kumar/office-attendance-system/blob/main/images/5.png"></img>
-<img src="https://github.com/m0hit-kumar/office-attendance-system/blob/main/images/3.png"></img>
-<img src="https://github.com/m0hit-kumar/office-attendance-system/blob/main/images/4.png"></img>
-<img src="https://github.com/m0hit-kumar/office-attendance-system/blob/main/images/2.png"></img>
 
 

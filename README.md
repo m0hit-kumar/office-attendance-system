@@ -42,5 +42,5 @@ import os
   
   https://user-images.githubusercontent.com/60257288/195001671-652f2cd3-5d61-4d03-be48-d4ed4c995a03.mp4 
  
-[![Watch the video](https://github.com/tanisha12j/office-attendance-system/blob/main/Screencast%20from%2029-10-22%2009:11:17%20PM%20IST.webm)]
+[Watch video to learn how to contribute and do pull request](https://user-images.githubusercontent.com/100759293/198841676-936bbb38-ac22-4446-a65e-f96755d5722c.webm)
 

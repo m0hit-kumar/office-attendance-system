@@ -43,5 +43,7 @@ import os
   https://user-images.githubusercontent.com/60257288/195001671-652f2cd3-5d61-4d03-be48-d4ed4c995a03.mp4 
  
 
+[Watch video to see how to contribute and do pull request ](https://user-images.githubusercontent.com/100759293/198841522-f35ebf90-4421-47a0-a514-7f589cd73a77.webm)
+
 
 
